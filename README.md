@@ -15,6 +15,7 @@ A Responsive front-end static website built with HTML, CSS and Tailwind
 - HTML5
 - CSS3
 - Tailwind CSS (utility-first framework)
+- java script
 
 
 
