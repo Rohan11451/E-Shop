@@ -17,4 +17,8 @@ A front-end web application using core HTML, CSS, TAILWING, JAVASCRIPT, and JQUE
 - JAVASCRIPT
 - JQUERY
 - TAILWIND
-- GIT COPILOT
+  
+## Tools
+- VS Code
+- git and github
+- git (AI)
