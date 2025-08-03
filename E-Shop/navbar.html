@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <title>Responsive Nav Bar</title>
+   
+</head>
+<body>
+   
+    <nav>
+        <div class="a_container">
+            <!-- <div style=" margin-right: 900px;">
+                <h1 style="color: #777;font-family: serif; font-size: x-large; font-style: normal;">Electronic Shop</h1>
+            </div> -->
+         
+            
+          <div>
+              <ul>
+              <li><a  onclick="showPage('apple')"   style="text-decoration: none; color: #777; " href="http://" target="_blank" rel="noopener noreferrer">APPLE</a></li>
+              <li><a  onclick="showPage('samsung')"   style="text-decoration: none; color: #777;" href="http://" target="_blank" rel="noopener noreferrer">AMSUNG</a></li>
+              <li><a  onclick="showPage('hp')"   style="text-decoration: none; color: #777;" href="http://" target="_blank" rel="noopener noreferrer">HP</a></li>
+              <li><a  onclick="showPage('dell')"   style="text-decoration: none; color: #777;" href="http://" target="_blank" rel="noopener noreferrer">DELL</a></li>
+              <li><a  onclick="showPage('lenovo')"   style="text-decoration: none; color: #777;" href="http://" target="_blank" rel="noopener noreferrer">LENOVO</a></li>
+              <li><a  onclick="showPage('about')"   style="text-decoration: none; color: #777;" href="http://" target="_blank" rel="noopener noreferrer">DELL</a></li>
+              <li><a  onclick="showPage('contact')"   style="text-decoration: none; color: #777;" href="http://" target="_blank" rel="noopener noreferrer">LENOVO</a></li>
+              <li><a  onclick="showPage('cart')"   style="text-decoration: none; color: #777;" href="#" target="_blank" rel="noopener noreferrer"><li>Cart <span><i class="fa fa-shopping-cart" style="font-size:24px"></i></span> </li></a>
+               </ul>
+          </div>
+        </div>
+    </nav>
+
+
+    <div id="content">
+        <div id="apple" class="page">
+            <h1>Welcome to apple Page</h1>
+            <p>This is the home page.</p>
+        </div>
+        <div id="samsung" class="page">
+            <h1>Welcome to samsung Page</h1>
+            <p>This is the samsung page.</p>
+        </div>
+        <div id="hp" class="page">
+            <h1>Welcome to hp Page</h1>
+            <p>This is the hp page.</p>
+        </div>
+        <div id="dell" class="page">
+            <h1>Welcome to dell Page</h1>
+            <p>This is the dell page.</p>
+        </div>
+        <div id="lenovo" class="page">
+            <h1>Welcome to lenovo Page</h1>
+            <p>This is the lenovo page.</p>
+        </div>
+
+        <div id="about" class="page" style="display:none;">
+            <h1>About Us</h1>
+            <p>This is the about page.</p>
+        </div>
+        <div id="contact" class="page" style="display:none;">
+            <h1>Contact Us</h1>
+            <p>This is the contact page.</p>
+        </div>
+    </div>
+
+    <script>
+   
+    function showPage(pageId) {
+        var pages = document.getElementsByClassName('page');
+        for (var i = 0; i < pages.length; i++) {
+            pages[i].style.display = 'none';
+        }
+        document.getElementById(pageId).style.display = 'block';
+    }
+    </script>
+    
+   
+</body>
+</html>

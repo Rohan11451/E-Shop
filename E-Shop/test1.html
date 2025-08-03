@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Object with JavaScript</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #myObject {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="myObject"></div>
+    <script>
+        const obj = document.getElementById('myObject');
+        let posX = window.innerWidth / 2 - 25;
+        let posY = window.innerHeight / 2 - 25;
+
+        function moveObject(event) {
+            switch(event.key) {
+                case "ArrowUp":
+                    posY -= 10;
+                    break;
+                case "ArrowDown":
+                    posY += 10;
+                    break;
+                case "ArrowLeft":
+                    posX -= 10;
+                    break;
+                case "ArrowRight":
+                    posX += 10;
+                    break;
+            }
+            obj.style.left = posX + 'px';
+            obj.style.top = posY + 'px';
+        }
+
+        window.addEventListener('keydown', moveObject);
+    </script>
+</body>
+</html>

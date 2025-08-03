@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Image Slideshow</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+      
+
+.container{
+    border: 2px solid tomato;
+   
+    max-width: 100%;
+    height: 800px;
+}
+
+.slideshow-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: fit-content;
+    max-height: fit-content;
+    background-color: white;
+    margin: auto;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 18px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.dots-container {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="images/all_colors__d4w03v51nwcy_large.jpg" alt="Image 1">
+            <div class="text">Caption Text 1</div>
+        </div>
+        <div class="slide fade">
+            <img src="images/pink__fxslpxkvshqy_large.jpg" alt="Image 2">
+            <div class="text">Caption Text 2</div>
+        </div>
+        <div class="slide fade">
+            <img src="images/yellow__f6ny7yiez7ue_large.jpg" alt="Image 3">
+            <div class="text">Caption Text 3</div>
+        </div>
+        <div class="slide fade">
+            <img src="images/green__1q1v4ia8oaq2_large.jpg" alt="Image 3">
+            <div class="text">Caption Text 3</div>
+        </div>
+        <div class="slide fade">
+            <img src="images/blue" alt="Image 3">
+            <div class="text">Caption Text 3</div>
+        </div>
+    </div>
+    <br>
+    <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+</div>
+    <script>
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+function currentSlide(n) {
+    slideIndex = n;
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+}
+
+    </script>
+</body>
+</html>

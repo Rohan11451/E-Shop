@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <link rel="stylesheet" href="CSS/b15styles.css">
+    <title>iPhone 15</title>
+</head>
+<body>
+
+
+    <nav>
+        <div class="a_container">
+            <!-- <div style=" margin-right: 900px;">
+                <h1 style="color: #777;font-family: serif; font-size: x-large; font-style: normal;">Electronic Shop</h1>
+            </div> -->
+          <div>
+              <ul>
+              <li><a style="text-decoration: none; color: #777; " href="http://" target="_blank" rel="noopener noreferrer">APPLE</a></li>
+              <li><a style="text-decoration: none; color: #777;" href="http://" target="_blank" rel="noopener noreferrer">SAMSUNG</a></li>
+              <li><a style="text-decoration: none; color: #777;" href="http://" target="_blank" rel="noopener noreferrer">HP</a></li>
+              <li><a style="text-decoration: none; color: #777;" href="http://" target="_blank" rel="noopener noreferrer">DELL</a></li>
+              <li><a style="text-decoration: none; color: #777;" href="http://" target="_blank" rel="noopener noreferrer">LENOVO</a></li>
+              <li><a style="text-decoration: none; color: #777;" href="http://" target="_blank" rel="noopener noreferrer">ABOUT US</a></li>
+              <li><a style="text-decoration: none; color: #777;" href="http://" target="_blank" rel="noopener noreferrer">CONTACT</a></li>
+              <li><a style="text-decoration: none; color: #777;" href="#" target="_blank" rel="noopener noreferrer"><li>Cart <span><i class="fa fa-shopping-cart" style="font-size:24px"></i></span> </li></a>
+               </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="second_container">
+        
+        
+        <div class="carousel">
+    
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/iphone-15-model-unselect-gallery-1-202309 (1).webp" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/iphone-15-model-unselect-gallery-2-202309_GEO_EMEA.webp" alt="Image 2">
+                </div>
+                <!-- <div class="carousel-item">
+                    <img src="image3.jpg" alt="Image 3">
+                </div> -->
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.carousel-item');
+    if (index >= slides.length) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = slides.length - 1;
+    } else {
+        currentIndex = index;
+    }
+    
+    const offset = -currentIndex * 100;
+    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+    showSlide(currentIndex + 1);
+}
+
+function prevSlide() {
+    showSlide(currentIndex - 1);
+}
+
+// Auto slide every 5 seconds
+setInterval(nextSlide, 5000);
+
+    </script>
+</body>
+</html>

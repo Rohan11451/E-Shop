@@ -1,0 +1,70 @@
+<!-- Login/Signup Modals -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('loginModal')">&times;</span>
+    <h2>Login</h2>
+    <form>
+      <input type="text" placeholder="Username" required><br>
+      <input type="password" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="#" onclick="switchModal('loginModal','signupModal')">Sign up</a></p>
+  </div>
+</div>
+
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('signupModal')">&times;</span>
+    <h2>Sign Up</h2>
+    <form>
+      <input type="text" placeholder="Username" required><br>
+      <input type="email" placeholder="Email" required><br>
+      <input type="password" placeholder="Password" required><br>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="#" onclick="switchModal('signupModal','loginModal')">Login</a></p>
+  </div>
+</div>
+
+<style>
+/* Modal styles */
+.modal {
+  display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%;
+  overflow: auto; background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+  background: #fff; margin: 10% auto; padding: 20px; border-radius: 8px; width: 300px; position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.close {
+  color: #aaa; position: absolute; right: 10px; top: 10px; font-size: 28px; font-weight: bold; cursor: pointer;
+}
+.modal-content input {
+  width: 90%; padding: 8px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px;
+}
+.modal-content button {
+  width: 100%; padding: 10px; background: #333; color: #fff; border: none; border-radius: 4px; cursor: pointer;
+}
+.modal-content button:hover { background: #555; }
+</style>
+
+<script>
+// Modal logic
+function openModal(id) {
+  document.getElementById(id).style.display = 'block';
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+function switchModal(hideId, showId) {
+  closeModal(hideId);
+  openModal(showId);
+}
+// Close modal when clicking outside
+window.onclick = function(event) {
+  ['loginModal','signupModal'].forEach(function(id){
+    var modal = document.getElementById(id);
+    if (event.target == modal) modal.style.display = "none";
+  });
+}
+</script>
